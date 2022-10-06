@@ -49,7 +49,7 @@ function removeXOClasses() {
 }
 
 function removeStartBtn() {
-  startBtn.style.visibility = "hidden";
+  startBtn.style.display = "none";
 }
 
 function showRestartBtn() {
@@ -71,9 +71,27 @@ function startGame() {
   });
 }
 
+function switchTurn() {
+  xTurn = !xTurn;
+}
+
 function gameLogic(e) {
   placeMarker(e);
+  isGameOver();
+  switchTurn();
+  tellTurns();
+  displayHover();
+}
 
+function tellTurns() {
+  if (xTurn) {
+    turnParag.textContent = "X Turn";
+  } else if (!xTurn) {
+    turnParag.textContent = "O Turn";
+  }
+}
+
+function isGameOver() {
   if (checkWinner()) {
     if (xTurn) {
       announceWinner.textContent = "X Wins!";
@@ -88,19 +106,6 @@ function gameLogic(e) {
     announceWinner.textContent = "DRAW!";
     console.log("DRAW");
     showGameOverModal();
-  }
-
-  switchTurn();
-  tellTurns();
-
-  displayHover();
-}
-
-function tellTurns() {
-  if (xTurn) {
-    turnParag.textContent = "X Turn";
-  } else if (!xTurn) {
-    turnParag.textContent = "O Turn";
   }
 }
 
@@ -156,8 +161,4 @@ function placeMarker(e) {
   if (!(e.target.classList.contains("x") || e.target.classList.contains("o"))) {
     xTurn ? e.target.classList.add("x") : e.target.classList.add("o");
   }
-}
-
-function switchTurn() {
-  xTurn = !xTurn;
 }
