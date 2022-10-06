@@ -22,16 +22,15 @@ const WIN_COMBINATION = [
 
 let xTurn = true;
 
-startBtn.onclick = () => {
+startBtn.onpointerdown = () => {
   removeStartBtn();
   displayHover();
   startGame();
 };
 
-playAgainBtn.onclick = () => {
+playAgainBtn.onpointerdown = () => {
   hideGameOverModal();
   removeXOClasses();
-  xTurn = true;
   displayHover();
   startGame();
 };
@@ -60,7 +59,7 @@ function startGame() {
   tellTurns();
   tiles.forEach((tile) => {
     tile.addEventListener(
-      "click",
+      "pointerdown",
       (e) => {
         gameLogic(e);
       },
@@ -117,7 +116,7 @@ function checkDraw() {
   });
 }
 
-window.onclick = () => {
+window.onpointerdown = () => {
   console.log(checkDraw());
 };
 
