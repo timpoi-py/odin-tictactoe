@@ -19,15 +19,35 @@
       <h1>TIC TAC TOE</h1>
 
       <div class="tiles">
-        <div class="tile tile-x" data-cell="0" data-tile></div>
-        <div class="tile tile-x" data-cell="1" data-tile></div>
-        <div class="tile tile-x" data-cell="2" data-tile></div>
-        <div class="tile tile-x" data-cell="3" data-tile></div>
-        <div class="tile tile-x" data-cell="5" data-tile></div>
-        <div class="tile tile-x" data-cell="4" data-tile></div>
-        <div class="tile tile-x" data-cell="7" data-tile></div>
-        <div class="tile tile-x" data-cell="6" data-tile></div>
-        <div class="tile tile-x" data-cell="8" data-tile></div>
+        <div class="tile" data-cell="0" data-tile></div>
+        <div class="tile" data-cell="1" data-tile></div>
+        <div class="tile" data-cell="2" data-tile></div>
+        <div class="tile" data-cell="3" data-tile></div>
+        <div class="tile" data-cell="5" data-tile></div>
+        <div class="tile" data-cell="4" data-tile></div>
+        <div class="tile" data-cell="7" data-tile></div>
+        <div class="tile" data-cell="6" data-tile></div>
+        <div class="tile" data-cell="8" data-tile></div>
+      </div>
+      <div class="game">
+        <p>START THE GAME</p>
+        <input type="button" value="START" id="start-btn" class="start-btn" />
+        <input
+          type="button"
+          value="RESTART"
+          id="restart-btn"
+          class="restart-btn"
+        />
+      </div>
+      <div class="game-over-bg">
+        <div class="game-over">
+          <p class="announce"></p>
+          <input type="button" value="Play Again" />
+          <p class="credit">
+            Created by <a href="https://github.com/timpoi-py">timpoi-py</a> for
+            <a href="https://www.theodinproject.com/">The Odin Project</a>
+          </p>
+        </div>
       </div>
     </main>
   </body>
